@@ -1,1 +1,5 @@
-
+spring:
+  datasource:
+    username: root
+    password: kd!253
+    url: jdbc:mysql://domain.kd.db:3306/db_label?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=6000&socketTimeout=6000
