@@ -16,5 +16,21 @@
             <groupId>com.lian</groupId>
             <artifactId>base-service</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.lian</groupId>
+            <artifactId>base-dao</artifactId>
+        </dependency>
+        <!--        &lt;!&ndash; 通用处理层引用,根据项目情况而定,如果service没有调用到通用处理业务无需引用&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.lian</groupId>-->
+        <!--            <artifactId>base-manager</artifactId>-->
+        <!--            &lt;!&ndash; 如果引用到dao层,需要排除 &ndash;&gt;-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <groupId>com.lian</groupId>-->
+        <!--                    <artifactId>base-dao</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
     </dependencies>
 </project>

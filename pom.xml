@@ -39,11 +39,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring.boot.version>2.6.4</spring.boot.version>
+        <lombok.version>1.18.22</lombok.version>
     </properties>
 
     <!-- 依赖统一版本管理声明 -->
     <dependencyManagement>
         <dependencies>
+            <!-- SpringBoot的依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- 子项目统一版本 -->
             <dependency>
                 <groupId>com.lian</groupId>
@@ -75,18 +84,18 @@
                 <artifactId>base-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
-            <!-- SpringBoot的依赖配置 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- lombok 依赖 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
     <!-- 编译管理 jdk版本和字符集编码 -->
     <build>
@@ -130,5 +139,4 @@
     <!--            </snapshots>-->
     <!--        </pluginRepository>-->
     <!--    </pluginRepositories>-->
-
 </project>

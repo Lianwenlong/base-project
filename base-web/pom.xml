@@ -11,15 +11,21 @@
     <artifactId>base-web</artifactId>
 
     <dependencies>
+        <!-- springboot 相关依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- 引用service服务模块 -->
+        <dependency>
+            <groupId>com.lian</groupId>
+            <artifactId>base-impl</artifactId>
         </dependency>
     </dependencies>
 

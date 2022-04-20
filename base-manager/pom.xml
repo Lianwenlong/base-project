@@ -12,10 +12,10 @@
     <artifactId>base-manager</artifactId>
 
     <dependencies>
-        <!--  -->
-        <dependency>
-            <groupId>com.lian</groupId>
-            <artifactId>base-dao</artifactId>
-        </dependency>
+        <!--        &lt;!&ndash; 当调用到dao的业务时才引用 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.lian</groupId>-->
+        <!--            <artifactId>base-dao</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
 </project>

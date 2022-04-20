@@ -1,0 +1,2 @@
+查询参数一般使用Query
+查询参数的demo对象定义为DemoQuery
