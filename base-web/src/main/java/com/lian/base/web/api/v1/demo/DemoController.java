@@ -1,4 +1,4 @@
-package com.lian.base.web.demo;
+package com.lian.base.web.api.v1.demo;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author LianWenLong
  * @date 2022/4/20 10:36
  */
-@RequestMapping("/demo")
+@RequestMapping("/v1/demo")
 @RestController
 public class DemoController {
 

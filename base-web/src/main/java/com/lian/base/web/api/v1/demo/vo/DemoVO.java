@@ -1,4 +1,4 @@
-package com.lian.base.web.demo.vo;
+package com.lian.base.web.api.v1.demo.vo;
 
 import lombok.Data;
 

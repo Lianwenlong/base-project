@@ -8,10 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author LianWenLong
  * @version 1.0
- * @ClassName Application
- * @Description
- * @createTime 2022年04月18日 18:05
+ * @date 2022年04月18日 18:05
  */
+
 @SpringBootApplication
 public class Application {
 

@@ -25,7 +25,7 @@
         <!-- 引用service服务模块 -->
         <dependency>
             <groupId>com.lian</groupId>
-            <artifactId>base-impl</artifactId>
+            <artifactId>base-service</artifactId>
         </dependency>
     </dependencies>
 
