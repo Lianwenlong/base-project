@@ -1,7 +1,7 @@
-package com.lian.base.dao.demo;
+package com.lian.base.dao.student;
 
-import com.lian.base.dao.demo.model.DemoDO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lian.base.dao.student.model.StudentDO;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -13,6 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2022-04-25 14:42
  */
 @Mapper
-public interface DemoMapper extends BaseMapper<DemoDO> {
+public interface StudentMapper extends BaseMapper<StudentDO> {
 
 }

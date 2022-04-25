@@ -1,5 +1,4 @@
-package com.lian.base.service.demo;
-
+package com.lian.base.service.student;
 
 import com.lian.base.service.BaseService;
 
@@ -11,6 +10,6 @@ import com.lian.base.service.BaseService;
  * @author LianWenLong
  * @since 2022-04-25 14:42
  */
-public interface DemoService extends BaseService {
+public interface StudentService extends BaseService {
 
 }

@@ -4,10 +4,12 @@ import com.lian.base.service.demo.DemoService;
 import org.springframework.stereotype.Service;
 
 /**
- * TODO(描述)
+ * <p>
+ * 服务实现类
+ * </p>
  *
  * @author LianWenLong
- * @date 2022/4/20 11:31
+ * @since 2022-04-25 14:42
  */
 @Service
 public class DemoServiceImpl implements DemoService {

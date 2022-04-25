@@ -3,6 +3,9 @@ server:
 
 spring:
   datasource:
+    #数据库驱动,原始驱动：
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: kd!253
     url: jdbc:mysql://domain.kd.db:3306/test?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=6000&socketTimeout=6000
+

@@ -9,9 +9,13 @@
     </parent>
 
     <artifactId>base-web</artifactId>
+    <description>
+        请求处理层: 主要是对访问控制进行转发,各类基本参数校验,或者不复用的业务简单处理等;
+        后续可以将启动相关的拉出去单起一个模块base-boot,此模块只保留api相关的controller
+    </description>
 
     <dependencies>
-        <!-- springboot 相关依赖 -->
+        <!-- Start: springboot 相关依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -21,12 +25,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- End: springboot 相关依赖 -->
 
         <!-- 引用service服务模块 -->
         <dependency>
             <groupId>com.lian</groupId>
-            <artifactId>base-service</artifactId>
+            <artifactId>base-impl</artifactId>
         </dependency>
+
         <!-- HuTool 工具类 -->
         <dependency>
             <groupId>cn.hutool</groupId>
