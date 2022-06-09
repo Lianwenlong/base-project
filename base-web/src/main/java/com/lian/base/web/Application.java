@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2022年04月18日 18:05
  */
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.lian.base"})
 public class Application {
 
     public static void main(String[] args) {

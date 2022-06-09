@@ -1,4 +1,4 @@
-package com.lian.base.service;
+package com.lian.base.common;
 
 /**
  * <p>

@@ -6,11 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
- * Mapper 接口
+ * 示例: 学生表管理Mapper
  * </p>
  *
  * @author LianWenLong
- * @since 2022-04-25 14:42
+ * @since 2022/5/30 17:02
  */
 @Mapper
 public interface StudentMapper extends BaseMapper<StudentDO> {

@@ -7,5 +7,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: kd!253
-    url: jdbc:mysql://domain.kd.db:3306/test?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=6000&socketTimeout=6000
+    url: jdbc:mysql://192.168.12.205:3306/test_student?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=6000&socketTimeout=6000
 

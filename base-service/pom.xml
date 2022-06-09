@@ -12,6 +12,10 @@
     <artifactId>base-service</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.lian</groupId>
+            <artifactId>base-common</artifactId>
+        </dependency>
         <!-- lombok 依赖 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
