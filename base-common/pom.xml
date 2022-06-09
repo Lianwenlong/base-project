@@ -10,5 +10,15 @@
     </parent>
 
     <artifactId>base-common</artifactId>
+    <description>通用模块,一些通用工具等功能</description>
+
+    <dependencies>
+        <!--对象转换工具-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

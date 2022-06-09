@@ -52,6 +52,8 @@
         <!--mybatis-plus版本-->
         <mybatis-plus.version>3.5.1</mybatis-plus.version>
         <p6spy.version>3.9.0</p6spy.version>
+        <!--对象转换工具-->
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
     </properties>
 
     <!-- 依赖统一版本管理声明 -->
@@ -123,6 +125,12 @@
                 <groupId>p6spy</groupId>
                 <artifactId>p6spy</artifactId>
                 <version>${p6spy.version}</version>
+            </dependency>
+            <!-- mapstruct 对象转换工具 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
