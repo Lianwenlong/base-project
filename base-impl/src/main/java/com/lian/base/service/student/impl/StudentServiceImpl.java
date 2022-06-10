@@ -1,8 +1,9 @@
 package com.lian.base.service.student.impl;
 
+
 import com.lian.base.dao.student.StudentMapper;
 import com.lian.base.dao.student.model.StudentDO;
-import com.lian.base.service.student.StudentConverter;
+import com.lian.base.service.student.StudentDoConverter;
 import com.lian.base.service.student.dto.StudentDTO;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class StudentServiceImpl implements StudentService {
     @Resource
     StudentMapper studentMapper;
     @Resource
-    StudentConverter studentConverter;
+    StudentDoConverter studentConverter;
 
     @Override
     public StudentDTO get(Integer id) {

@@ -1,4 +1,4 @@
-package com.lian.base.web.api.v1.student.vo;
+package com.lian.base.web.student.vo;
 
 import java.io.Serializable;
 import lombok.Data;
