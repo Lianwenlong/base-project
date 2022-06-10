@@ -14,6 +14,6 @@ import org.mapstruct.ReportingPolicy;
  * @since 2022/6/9 22:55
  */
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface StudentConverter extends BaseConverter<StudentDTO, StudentVO> {
+public interface StudentVoConverter extends BaseConverter<StudentDTO, StudentVO> {
 
 }

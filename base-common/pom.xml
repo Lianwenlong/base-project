@@ -19,6 +19,4 @@
             <artifactId>mapstruct</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>

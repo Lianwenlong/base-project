@@ -180,13 +180,31 @@
     <build>
         <plugins>
             <plugin>
+                <!--源码编译插件-->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+                <!-- 对插件进行全局设置，不管此插件绑定到什么阶段都使用同样的配置 -->
                 <configuration>
+                    <!-- 编译1.8版本的源文件 -->
                     <source>${java.version}</source>
+                    <!-- 生成与JVM 1.8 兼容的字节码文件 -->
                     <target>${java.version}</target>
+                    <!-- 字符编码-->
                     <encoding>${project.build.sourceEncoding}</encoding>
+
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                            <version>${spring.boot.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>

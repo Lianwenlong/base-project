@@ -1,9 +1,9 @@
 package com.lian.base.web.api.v1.student;
 
+import com.lian.base.common.BaseController;
 import com.lian.base.service.student.StudentService;
 import com.lian.base.service.student.dto.StudentDTO;
-import com.lian.base.web.api.BaseController;
-import com.lian.base.web.api.v1.student.vo.StudentConverter;
+import com.lian.base.web.api.v1.student.vo.StudentVoConverter;
 import com.lian.base.web.api.v1.student.vo.StudentVO;
 import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +26,11 @@ public class StudentController implements BaseController {
     @Resource
     StudentService studentService;
     @Resource
-    StudentConverter studentConverter;
+    StudentVoConverter studentVoConverter;
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "{id}")
     StudentVO getById(@PathVariable Integer id) {
         StudentDTO studentDTO = studentService.get(id);
-        return studentConverter.so2to(studentDTO);
+        return studentVoConverter.so2to(studentDTO);
     }
 }

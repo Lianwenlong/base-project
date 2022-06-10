@@ -1,4 +1,4 @@
-package com.lian.base.web;
+package com.lian.base;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2022年04月18日 18:05
  */
 
-@SpringBootApplication(scanBasePackages = {"com.lian.base"})
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {

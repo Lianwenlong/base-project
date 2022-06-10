@@ -52,7 +52,7 @@
                 <version>${spring.boot.version}</version>
                 <!-- 指定程序入口 -->
                 <configuration>
-                    <mainClass>com.lian.base.web.Application</mainClass>
+                    <mainClass>com.lian.base.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>

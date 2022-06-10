@@ -1,4 +1,4 @@
-package com.lian.base.web.api;
+package com.lian.base.common;
 
 
 /**
