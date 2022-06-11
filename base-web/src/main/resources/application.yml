@@ -8,4 +8,25 @@ spring:
     username: root
     password: kd!253
     url: jdbc:mysql://192.168.12.205:3306/test_student?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&connectTimeout=6000&socketTimeout=6000
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+#swagger在线文档配置
+swagger:
+  enabled: true
+  ## 需要排除的URL
+  exclude-path: /error
+  ## 分组
+  docket:
+    base-v1:
+      ## swagger扫描的基础包，默认：全扫描
+      base-package: com.lian.base.web.v1
+      title: BaseProject接口_V1
+      description: BaseProject在线文档
+      version: 1.0
+
+
+
+
 

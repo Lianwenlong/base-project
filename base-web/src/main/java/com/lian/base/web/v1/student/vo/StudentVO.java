@@ -1,29 +1,31 @@
-package com.lian.base.service.student.dto;
+package com.lian.base.web.v1.student.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
 
+
 /**
  * <p>
- * 学生对象DTO模型
+ * 展示层学生对象
  * </p>
  *
  * @author LianWenLong
- * @since 2022/5/30 17:35
+ * @since 2022/5/30 18:41
  */
-@Data
-@ApiModel("学生信息传输对象")
-public class StudentDTO implements Serializable {
 
-    @ApiModelProperty(value = "主键id", example = "1")
+@Data
+@ApiModel("学生模型")
+public class StudentVO implements Serializable {
+
+    @ApiModelProperty(value = "id", example = "1")
     private Integer id;
 
     @ApiModelProperty(value = "姓名", example = "张三")
     private String name;
 
-    @ApiModelProperty(value = "年龄", example = "19")
+    @ApiModelProperty(value = "年龄", example = "28")
     private Integer age;
 
     @ApiModelProperty(value = "地址", example = "北京")

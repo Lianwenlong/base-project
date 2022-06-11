@@ -1,4 +1,4 @@
-package com.lian.base.service.student.dto;
+package com.lian.base.service.student.param;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,18 +7,15 @@ import lombok.Data;
 
 /**
  * <p>
- * 学生对象DTO模型
+ * 新增学生参数模型
  * </p>
  *
  * @author LianWenLong
  * @since 2022/5/30 17:35
  */
 @Data
-@ApiModel("学生信息传输对象")
-public class StudentDTO implements Serializable {
-
-    @ApiModelProperty(value = "主键id", example = "1")
-    private Integer id;
+@ApiModel("新增学生参数模型")
+public class InsertParam implements Serializable {
 
     @ApiModelProperty(value = "姓名", example = "张三")
     private String name;

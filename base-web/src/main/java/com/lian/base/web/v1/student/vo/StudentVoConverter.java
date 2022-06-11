@@ -1,4 +1,4 @@
-package com.lian.base.web.student.vo;
+package com.lian.base.web.v1.student.vo;
 
 import com.lian.base.common.BaseConverter;
 import com.lian.base.service.student.dto.StudentDTO;

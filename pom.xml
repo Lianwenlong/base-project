@@ -54,6 +54,7 @@
         <p6spy.version>3.9.0</p6spy.version>
         <!--对象转换工具-->
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <swagger-starter.version>1.9.1.RELEASE</swagger-starter.version>
     </properties>
 
     <!-- 依赖统一版本管理声明 -->
@@ -66,6 +67,12 @@
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- swagger集成 -->
+            <dependency>
+                <groupId>com.spring4all</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger-starter.version}</version>
             </dependency>
             <!-- 子项目统一版本 -->
             <dependency>

@@ -11,58 +11,59 @@ import java.util.Set;
  * @author LianWenLong
  * @since 2022/5/30 19:17
  */
-public interface BaseConverter<S, T> {
+public interface BaseConverter<In, Out> {
 
     /**
-     * 源对象转目标对象
+     * 输入转输出
      *
-     * @param source 源对象
-     * @return T 目标对象
+     * @param in 输入对象
+     * @return Out 输出对象
      */
-    T so2to(S source);
+    Out in2Out(In in);
 
 
     /**
-     * 目标对象转源对象
+     * 输出转输入
      *
-     * @param target 目标对象
-     * @return S 源对象
+     * @param out 输出对象
+     * @return In 输入对象
      */
-    S to2so(T target);
+    In out2In(Out out);
 
 
     /**
-     * source集合转target集合
-     *
-     * @param collection 数据集
-     * @return List<T>
-     */
-    List<T> so2to(List<S> collection);
-
-
-    /**
-     * target集合转source集合
+     * 输入转输出
      *
      * @param collection 数据集
-     * @return Set
+     * @return List<Out>
      */
-    List<S> to2so(List<T> collection);
+    List<Out> in2Out(List<In> collection);
 
 
     /**
-     * source集合转target集合
-     *
-     * @param collection 数据集
-     * @return Set<T>
-     */
-    Set<T> so2to(Set<S> collection);
-
-
-    /**
-     * target集合转source集合
+     * 输出转输入
      *
      * @param collection 数据集
      * @return Set
      */
-    Set<S> to2so(Set<T> collection);
+    List<In> out2In(List<Out> collection);
+
+
+    /**
+     * 输入转输出
+     *
+     * @param collection 数据集
+     * @return Set<Out>
+     */
+    Set<Out> in2Out(Set<In> collection);
+
+
+    /**
+     * 输出转输入
+     *
+     * @param collection 数据集
+     * @return Set
+     */
+    Set<In> out2In(Set<Out> collection);
+
 }
