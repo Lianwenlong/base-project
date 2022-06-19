@@ -17,6 +17,8 @@ import lombok.Data;
 @ApiModel("学生信息传输对象")
 public class StudentDTO implements Serializable {
 
+    private static final long serialVersionUID = 3148763067592734862L;
+    
     @ApiModelProperty(value = "主键id", example = "1")
     private Integer id;
 

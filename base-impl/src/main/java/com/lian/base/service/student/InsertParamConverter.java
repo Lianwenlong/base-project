@@ -1,6 +1,6 @@
 package com.lian.base.service.student;
 
-import com.lian.base.common.BaseConverter;
+import com.lian.base.common.service.BaseConverter;
 import com.lian.base.dao.student.model.StudentDO;
 import com.lian.base.service.student.param.InsertParam;
 import org.mapstruct.Mapper;

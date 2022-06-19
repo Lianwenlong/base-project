@@ -1,6 +1,6 @@
 package com.lian.base.service.student;
 
-import com.lian.base.common.BaseService;
+import com.lian.base.common.service.BaseService;
 import com.lian.base.service.student.dto.StudentDTO;
 import com.lian.base.service.student.param.InsertParam;
 import com.lian.base.service.student.param.UpdateParam;

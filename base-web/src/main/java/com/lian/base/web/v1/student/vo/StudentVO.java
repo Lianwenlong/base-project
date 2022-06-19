@@ -19,6 +19,8 @@ import lombok.Data;
 @ApiModel("学生模型")
 public class StudentVO implements Serializable {
 
+    private static final long serialVersionUID = -2526566067256734024L;
+    
     @ApiModelProperty(value = "id", example = "1")
     private Integer id;
 

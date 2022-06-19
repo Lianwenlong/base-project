@@ -19,6 +19,8 @@ import lombok.Data;
 @TableName(value = "test_student.t_student")
 public class StudentDO implements Serializable {
 
+    private static final long serialVersionUID = 5951084044913971170L;
+    
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
@@ -39,8 +41,6 @@ public class StudentDO implements Serializable {
      */
     @TableField(value = "address")
     private String address;
-
-    private static final long serialVersionUID = 1L;
 
     public static final String COL_ID = "id";
 

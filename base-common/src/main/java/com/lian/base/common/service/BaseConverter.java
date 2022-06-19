@@ -1,4 +1,4 @@
-package com.lian.base.common;
+package com.lian.base.common.service;
 
 import java.util.List;
 import java.util.Set;

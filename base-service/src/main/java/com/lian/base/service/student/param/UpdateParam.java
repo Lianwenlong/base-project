@@ -20,6 +20,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class UpdateParam extends InsertParam {
 
+    private static final long serialVersionUID = 8501609924193008264L;
+    
     @NotNull
     @ApiModelProperty(value = "主键id", example = "1")
     private Integer id;

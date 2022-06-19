@@ -17,6 +17,8 @@ import lombok.Data;
 @ApiModel("新增学生参数模型")
 public class InsertParam implements Serializable {
 
+    private static final long serialVersionUID = 4949897837434810914L;
+
     @ApiModelProperty(value = "姓名", example = "张三")
     private String name;
 

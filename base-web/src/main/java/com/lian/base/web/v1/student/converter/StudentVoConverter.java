@@ -1,7 +1,8 @@
-package com.lian.base.web.v1.student.vo;
+package com.lian.base.web.v1.student.converter;
 
-import com.lian.base.common.BaseConverter;
+import com.lian.base.common.service.BaseConverter;
 import com.lian.base.service.student.dto.StudentDTO;
+import com.lian.base.web.v1.student.vo.StudentVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

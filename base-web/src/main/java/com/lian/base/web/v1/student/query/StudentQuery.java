@@ -17,6 +17,8 @@ import lombok.Data;
 @ApiModel("学生查询对象")
 public class StudentQuery implements Serializable {
 
+    private static final long serialVersionUID = -3833191389661245654L;
+    
     @ApiModelProperty(value = "查询学生姓名", example = "张")
     private String name;
 

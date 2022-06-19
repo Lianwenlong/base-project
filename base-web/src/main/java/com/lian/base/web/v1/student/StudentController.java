@@ -1,12 +1,12 @@
 package com.lian.base.web.v1.student;
 
-import com.lian.base.common.BaseController;
+import com.lian.base.common.service.BaseController;
 import com.lian.base.service.student.StudentService;
 import com.lian.base.service.student.dto.StudentDTO;
 import com.lian.base.service.student.param.InsertParam;
 import com.lian.base.service.student.param.UpdateParam;
 import com.lian.base.web.v1.student.query.StudentQuery;
-import com.lian.base.web.v1.student.vo.StudentVoConverter;
+import com.lian.base.web.v1.student.converter.StudentVoConverter;
 import com.lian.base.web.v1.student.vo.StudentVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -75,6 +75,7 @@ public class StudentController implements BaseController {
     @ApiOperation("学生列表")
     @GetMapping("/list")
     List<StudentVO> listStudents(StudentQuery studentQuery) {
+        // todo: 分页实现
         return null;
     }
 }
