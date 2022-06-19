@@ -10,12 +10,17 @@
     </parent>
 
     <artifactId>base-manager</artifactId>
+    <description>
+        通用业务处理层
+        1、对第三方平台封装的层，预处理返回结果及转化异常信息
+        2、对Service层通用能力下层，如缓存方案、中间件通用处理
+        3、与DAO层交互，对多个DAO的组合复用
+    </description>
 
     <dependencies>
-        <!--        &lt;!&ndash; 当调用到dao的业务时才引用 &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.lian</groupId>-->
-        <!--            <artifactId>base-dao</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.lian</groupId>
+            <artifactId>base-common</artifactId>
+        </dependency>
     </dependencies>
 </project>

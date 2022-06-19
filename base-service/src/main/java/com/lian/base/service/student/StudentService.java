@@ -4,6 +4,7 @@ import com.lian.base.common.service.BaseService;
 import com.lian.base.service.student.dto.StudentDTO;
 import com.lian.base.service.student.param.InsertParam;
 import com.lian.base.service.student.param.UpdateParam;
+import java.util.List;
 
 /**
  * <p>
@@ -19,25 +20,22 @@ public interface StudentService extends BaseService {
      * 插入学生信息
      *
      * @param insertParam 学生信息
-     * @return affect 影响行数
      */
-    Integer insert(InsertParam insertParam);
+    void insert(InsertParam insertParam);
 
     /**
      * 删除学生信息
      *
      * @param id 学生Id
-     * @return affect 影响行数
      */
-    Integer delete(Integer id);
+    void delete(Integer id);
 
     /**
      * 更新学生信息
      *
      * @param updateParam 更新信息
-     * @return affect 影响行数
      */
-    Integer update(UpdateParam updateParam);
+    void update(UpdateParam updateParam);
 
 
     /**
@@ -47,5 +45,13 @@ public interface StudentService extends BaseService {
      * @return StudentDTO
      */
     StudentDTO get(Integer id);
+
+    /**
+     * 学生列表
+     * TODO: 分页实现
+     *
+     * @return List
+     */
+    List<StudentDTO> listStudents();
 
 }

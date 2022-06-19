@@ -42,6 +42,11 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alanpoi</groupId>
+            <artifactId>alanpoi-analysis</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

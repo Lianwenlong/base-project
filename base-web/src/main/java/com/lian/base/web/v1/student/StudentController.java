@@ -1,5 +1,6 @@
 package com.lian.base.web.v1.student;
 
+import com.alanpoi.analysis.common.utils.ExcelExportUtil;
 import com.lian.base.common.service.BaseController;
 import com.lian.base.service.student.StudentService;
 import com.lian.base.service.student.dto.StudentDTO;
@@ -13,6 +14,8 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -75,7 +78,15 @@ public class StudentController implements BaseController {
     @ApiOperation("学生列表")
     @GetMapping("/list")
     List<StudentVO> listStudents(StudentQuery studentQuery) {
-        // todo: 分页实现
-        return null;
+        List<StudentDTO> studentDTOS = studentService.listStudents();
+        return studentVoConverter.in2Out(studentDTOS);
     }
+
+    @ApiOperation("学生信息导出")
+    @GetMapping("/list/export")
+    void export(HttpServletRequest request, HttpServletResponse response) {
+        List<StudentVO> studentVOS = listStudents(new StudentQuery());
+        ExcelExportUtil.export(studentVOS, StudentVO.class, request, response, "Student.xlsx");
+    }
+
 }

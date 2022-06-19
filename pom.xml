@@ -54,7 +54,10 @@
         <p6spy.version>3.9.0</p6spy.version>
         <!--对象转换工具-->
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <!--Swagger文档-->
         <swagger-starter.version>1.9.1.RELEASE</swagger-starter.version>
+        <!--Excel工具-->
+        <alanpoi.analysis.version>1.3.4</alanpoi.analysis.version>
     </properties>
 
     <!-- 依赖统一版本管理声明 -->
@@ -138,6 +141,12 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+            <!-- Excel 工具 -->
+            <dependency>
+                <groupId>com.alanpoi</groupId>
+                <artifactId>alanpoi-analysis</artifactId>
+                <version>${alanpoi.analysis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
