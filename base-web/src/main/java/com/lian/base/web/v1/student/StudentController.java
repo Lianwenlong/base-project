@@ -1,6 +1,8 @@
 package com.lian.base.web.v1.student;
 
 import com.alanpoi.analysis.common.utils.ExcelExportUtil;
+import com.alanpoi.analysis.common.utils.ExcelImportUtil;
+import com.alanpoi.analysis.excel.imports.ExcelImportRes;
 import com.lian.base.common.service.BaseController;
 import com.lian.base.service.student.StudentService;
 import com.lian.base.service.student.dto.StudentDTO;
@@ -12,6 +14,7 @@ import com.lian.base.web.v1.student.vo.StudentVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import java.io.IOException;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +29,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * <p>
@@ -83,10 +87,16 @@ public class StudentController implements BaseController {
     }
 
     @ApiOperation("学生信息导出")
-    @GetMapping("/list/export")
-    void export(HttpServletRequest request, HttpServletResponse response) {
-        List<StudentVO> studentVOS = listStudents(new StudentQuery());
+    @GetMapping("/download")
+    void download(HttpServletRequest request, HttpServletResponse response, StudentQuery studentQuery) {
+        List<StudentVO> studentVOS = listStudents(studentQuery);
         ExcelExportUtil.export(studentVOS, StudentVO.class, request, response, "Student.xlsx");
+    }
+
+    @ApiOperation("学生信息导入")
+    @PostMapping("/upload")
+    ExcelImportRes upload(MultipartFile file) throws IOException {
+        return ExcelImportUtil.customImportData("Student", file.getInputStream(), file.getOriginalFilename());
     }
 
 }

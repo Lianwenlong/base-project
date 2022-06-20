@@ -10,6 +10,7 @@ import com.lian.base.service.student.dto.StudentDTO;
 import com.lian.base.service.student.param.InsertParam;
 import com.lian.base.service.student.param.UpdateParam;
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.lian.base.service.student.StudentService;
@@ -45,6 +46,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void delete(Integer id) {
+        if (Objects.isNull(id)) {
+            return;
+        }
         studentMapper.deleteById(id);
     }
 
