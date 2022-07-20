@@ -34,7 +34,6 @@ public class StudentServiceImpl implements StudentService {
     @Resource
     StudentDoConverter studentConverter;
 
-
     @Override
     public void insert(InsertParam insertParam) {
         if (ObjectUtils.isEmpty(insertParam)) {

@@ -1,6 +1,5 @@
 package com.lian.base.service.student.param;
 
-import com.lian.base.service.student.dto.StudentDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.NotNull;
@@ -21,8 +20,8 @@ import lombok.EqualsAndHashCode;
 public class UpdateParam extends InsertParam {
 
     private static final long serialVersionUID = 8501609924193008264L;
-    
+
     @NotNull
     @ApiModelProperty(value = "主键id", example = "1")
-    private Integer id;
+    private Long id;
 }

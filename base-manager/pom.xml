@@ -22,5 +22,18 @@
             <groupId>com.lian</groupId>
             <artifactId>base-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.lian</groupId>
+            <artifactId>base-dao</artifactId>
+        </dependency>
+        <dependency>
+            <artifactId>leaf-boot-starter</artifactId>
+            <groupId>com.sankuai.inf.leaf</groupId>
+            <version>${leaf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
     </dependencies>
 </project>

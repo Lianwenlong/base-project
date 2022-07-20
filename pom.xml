@@ -58,6 +58,8 @@
         <swagger-starter.version>1.9.1.RELEASE</swagger-starter.version>
         <!--Excel工具-->
         <alanpoi.analysis.version>1.3.4</alanpoi.analysis.version>
+        <persistence.version>2.2</persistence.version>
+        <leaf.version>1.0.2-SNAPSHOT</leaf.version>
     </properties>
 
     <!-- 依赖统一版本管理声明 -->
@@ -142,11 +144,22 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>${persistence.version}</version>
+            </dependency>
             <!-- Excel 工具 -->
             <dependency>
                 <groupId>com.alanpoi</groupId>
                 <artifactId>alanpoi-analysis</artifactId>
                 <version>${alanpoi.analysis.version}</version>
+            </dependency>
+            <!-- 美团雪花算法 -->
+            <dependency>
+                <artifactId>leaf-boot-starter</artifactId>
+                <groupId>com.sankuai.inf.leaf</groupId>
+                <version>${leaf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

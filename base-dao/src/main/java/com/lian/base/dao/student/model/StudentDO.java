@@ -4,8 +4,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
+import com.lian.base.dao.BaseDO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -15,14 +16,13 @@ import lombok.Data;
  * @author LianWenLong
  * @since 2022/5/30 17:02
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 @TableName(value = "test_student.t_student")
-public class StudentDO implements Serializable {
+public class StudentDO extends BaseDO {
 
     private static final long serialVersionUID = 5951084044913971170L;
-    
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
 
     /**
      * 姓名
