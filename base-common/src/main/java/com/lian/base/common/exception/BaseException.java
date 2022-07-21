@@ -22,6 +22,10 @@ public enum BaseException implements GlobalException {
      */
     HTTP_NOT_FOUND(404),
     /**
+     * 不支持的操作
+     */
+    UNSUPPORTED_OPERATIONS(400),
+    /**
      * 服务不可用
      */
     SERVICE_UNAVAILABLE(400),
