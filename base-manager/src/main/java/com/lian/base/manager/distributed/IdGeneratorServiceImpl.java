@@ -1,6 +1,7 @@
 package com.lian.base.manager.distributed;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.lian.base.common.exception.BaseException;
 import com.sankuai.inf.leaf.common.Result;
 import com.sankuai.inf.leaf.common.Status;
 import com.sankuai.inf.leaf.service.SnowflakeService;
@@ -26,8 +27,7 @@ public class IdGeneratorServiceImpl implements IdGeneratorService {
     public Long nextId(String key) {
         Result result = snowflakeService.getId(key);
         if (ObjectUtil.equal(Status.EXCEPTION, result.getStatus())) {
-            //  throw BaseCommonException.DISPERSED_ID_ERROR.runtimeException();
-            throw new RuntimeException("DISPERSED_ID_ERROR");
+            throw BaseException.DISPERSED_ID_ERROR.runtimeException();
         }
         return result.getId();
     }

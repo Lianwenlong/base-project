@@ -2,12 +2,12 @@ package com.lian.base.common.service;
 
 
 /**
- * <pre>
- *
+ * <p>
  * 基础Controller
+ * </p>
+ *
  * @author LianWenLong
  * @since 2022/4/18 11:22
- * </pre>
  */
 public interface BaseController {
 
