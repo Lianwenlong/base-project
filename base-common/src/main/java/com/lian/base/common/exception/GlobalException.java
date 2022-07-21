@@ -54,10 +54,10 @@ public interface GlobalException {
      */
     default ExtRuntimeException runtimeException() {
         String message = I18nTranslator.translate(i18nPropPath(), name());
-        ExtRuntimeException exception = new ExtRuntimeException(message);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        return ex;
     }
 
     /**
@@ -68,10 +68,10 @@ public interface GlobalException {
      */
     default ExtRuntimeException runtimeException(Object... params) {
         String message = I18nTranslator.translate(i18nPropPath(), name(), params);
-        ExtRuntimeException exception = new ExtRuntimeException(message);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        return ex;
     }
 
     /**
@@ -82,10 +82,10 @@ public interface GlobalException {
      */
     default ExtRuntimeException runtimeException(Throwable cause) {
         String message = I18nTranslator.translate(i18nPropPath(), name());
-        ExtRuntimeException exception = new ExtRuntimeException(message, cause);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message, cause);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        return ex;
     }
 
     /**
@@ -97,10 +97,10 @@ public interface GlobalException {
      */
     default ExtRuntimeException runtimeException(Throwable cause, Object... params) {
         String message = I18nTranslator.translate(i18nPropPath(), name(), params);
-        ExtRuntimeException exception = new ExtRuntimeException(message, cause);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message, cause);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        return ex;
     }
 
     /**
@@ -111,13 +111,14 @@ public interface GlobalException {
      * @param writableStackTrace 堆栈跟踪是否应该可写
      * @return ExtRuntimeException
      */
-    default ExtRuntimeException runtimeCustomException(Throwable cause, boolean enableSuppression,
-        boolean writableStackTrace) {
+    default ExtRuntimeException runtimeCustomException(Throwable cause,
+                                                       boolean enableSuppression,
+                                                       boolean writableStackTrace) {
         String message = I18nTranslator.translate(i18nPropPath(), name());
-        ExtRuntimeException exception = new ExtRuntimeException(message, cause, enableSuppression, writableStackTrace);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message, cause, enableSuppression, writableStackTrace);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        return ex;
     }
 
     /**
@@ -129,13 +130,15 @@ public interface GlobalException {
      * @param params             国际化参数
      * @return ExtRuntimeException
      */
-    default ExtRuntimeException runtimeCustomException(Throwable cause, boolean enableSuppression,
-        boolean writableStackTrace, Object... params) {
+    default ExtRuntimeException runtimeCustomException(Throwable cause,
+                                                       boolean enableSuppression,
+                                                       boolean writableStackTrace,
+                                                       Object... params) {
         String message = I18nTranslator.translate(i18nPropPath(), name(), params);
-        ExtRuntimeException exception = new ExtRuntimeException(message, cause, enableSuppression, writableStackTrace);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message, cause, enableSuppression, writableStackTrace);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        return ex;
     }
 
     /**
@@ -146,11 +149,11 @@ public interface GlobalException {
      */
     default ExtRuntimeException runtimeExceptionAndErrorData(Object errorData) {
         String message = I18nTranslator.translate(i18nPropPath(), name());
-        ExtRuntimeException exception = new ExtRuntimeException(message);
-        exception.setCode(name());
-        exception.setStatus(getStatus());
-        exception.setErrorData(errorData);
-        return exception;
+        ExtRuntimeException ex = new ExtRuntimeException(message);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        ex.setErrorData(errorData);
+        return ex;
     }
 
     /**
@@ -162,11 +165,11 @@ public interface GlobalException {
      */
     default ExtRuntimeException runtimeExceptionAndErrorData(Object errorData, Object... params) {
         String message = I18nTranslator.translate(i18nPropPath(), name(), params);
-        ExtRuntimeException runtimeException = new ExtRuntimeException(message);
-        runtimeException.setCode(name());
-        runtimeException.setStatus(getStatus());
-        runtimeException.setErrorData(errorData);
-        return runtimeException;
+        ExtRuntimeException ex = new ExtRuntimeException(message);
+        ex.setCode(name());
+        ex.setStatus(getStatus());
+        ex.setErrorData(errorData);
+        return ex;
     }
 
     /**
@@ -195,8 +198,10 @@ public interface GlobalException {
      * @param errorData          异常数据
      * @return ExtRuntimeException
      */
-    default ExtRuntimeException runtimeCustomExceptionAndErrorData(Throwable cause, boolean enableSuppression,
-        boolean writableStackTrace, Object errorData) {
+    default ExtRuntimeException runtimeCustomExceptionAndErrorData(Throwable cause,
+                                                                   boolean enableSuppression,
+                                                                   boolean writableStackTrace,
+                                                                   Object errorData) {
         String message = I18nTranslator.translate(i18nPropPath(), name());
         ExtRuntimeException ex = new ExtRuntimeException(message, cause, enableSuppression, writableStackTrace);
         ex.setCode(name());
@@ -215,8 +220,11 @@ public interface GlobalException {
      * @param params             国际化参数
      * @return ExtRuntimeException
      */
-    default ExtRuntimeException runtimeCustomExceptionAndErrorData(Throwable cause, boolean enableSuppression,
-        boolean writableStackTrace, Object errorData, Object... params) {
+    default ExtRuntimeException runtimeCustomExceptionAndErrorData(Throwable cause,
+                                                                   boolean enableSuppression,
+                                                                   boolean writableStackTrace,
+                                                                   Object errorData,
+                                                                   Object... params) {
         String message = I18nTranslator.translate(i18nPropPath(), name(), params);
         ExtRuntimeException ex = new ExtRuntimeException(message, cause, enableSuppression, writableStackTrace);
         ex.setCode(name());

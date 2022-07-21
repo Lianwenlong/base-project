@@ -15,5 +15,8 @@ public class BaseConstant {
      */
     public static final String EXCEPTION_I18N_PROP_PATH = "i18n.exception.";
 
-
+    /**
+     * 枚举国际化配置路径
+     */
+    public static final String ENUM_I18N_PROP_PATH = "i18n.enumeration.";
 }

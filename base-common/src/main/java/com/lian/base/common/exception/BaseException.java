@@ -49,7 +49,11 @@ public enum BaseException implements GlobalException {
     /**
      * 请求超时
      */
-    TIME_OUT(500);
+    TIME_OUT(500),
+    /**
+     * 通用自定义异常,异常信息传入
+     */
+    COMMON_CUSTOM(500);
 
     private final int status;
 
