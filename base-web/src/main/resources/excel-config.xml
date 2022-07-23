@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<exg name="excelId" version="1.0" file-type="excel">
+    <excel id="Student" consume="com.lian.base.web.v1.student.StudentImportHandler">
+        <sheet index="0" row-start="1" column-start="0"
+               vo="com.lian.base.web.v1.student.vo.StudentVO">
+            <column offset="0">id</column>
+            <column offset="1">name</column>
+            <column offset="2">age</column>
+            <column offset="3">address</column>
+        </sheet>
+    </excel>
+</exg>

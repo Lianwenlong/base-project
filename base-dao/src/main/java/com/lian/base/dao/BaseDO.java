@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import javax.persistence.MappedSuperclass;
+
 import lombok.Data;
 
 /**
@@ -22,13 +24,21 @@ import lombok.Data;
 public abstract class BaseDO implements Serializable {
 
     private static final long serialVersionUID = -2468811473547035750L;
-    public static final String ID = "id";
-    public static final String CREATE_TIME = "create_time";
-    public static final String CREATOR = "creator";
-    public static final String CREATOR_NAME = "creator_name";
-    public static final String MODIFY_TIME = "modify_time";
-    public static final String MODIFIER = "modifier";
-    public static final String MODIFIER_NAME = "modifier_name";
+    
+    public static final String COL_ID = "id";
+
+    public static final String COL_CREATOR = "creator";
+
+    public static final String COL_CREATE_TIME = "create_time";
+
+    public static final String COL_CREATOR_NAME = "creator_name";
+
+    public static final String COL_MODIFIER = "modifier";
+
+    public static final String COL_MODIFY_TIME = "modify_time";
+
+    public static final String COL_MODIFIER_NAME = "modifier_name";
+
 
     /**
      * 主键
