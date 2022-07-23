@@ -58,5 +58,11 @@ public interface StudentService extends BaseService {
      */
     List<StudentDTO> getByIds(Set<Long> ids);
 
+    /**
+     * 分页查询
+     *
+     * @param queryPager 分页查询条件
+     * @return ResultPager
+     */
     ResultPager<StudentDTO> listStudents(QueryPager queryPager);
 }

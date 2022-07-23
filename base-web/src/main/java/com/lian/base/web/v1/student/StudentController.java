@@ -3,6 +3,8 @@ package com.lian.base.web.v1.student;
 import com.alanpoi.analysis.common.utils.ExcelExportUtil;
 import com.alanpoi.analysis.common.utils.ExcelImportUtil;
 import com.alanpoi.analysis.excel.imports.ExcelImportRes;
+import com.alanpoi.analysis.excel.imports.ExcelSheetData;
+import com.alanpoi.common.enums.ResponseEnum;
 import com.lian.base.common.model.QueryPager;
 import com.lian.base.common.model.ResultPager;
 import com.lian.base.common.service.BaseController;
@@ -15,8 +17,10 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Resource;
 
 import javax.servlet.http.HttpServletRequest;
@@ -101,10 +105,21 @@ public class StudentController implements BaseController {
     @ApiOperation("学生信息导入")
     @PostMapping("/upload")
     ExcelImportRes upload(MultipartFile file) throws IOException {
-        // TODO StudentImportHandler的end方法中落地失败的数据没有在结果计数的修改。需要修正
-        return ExcelImportUtil.customImportData("Student",
-                                                file.getInputStream(),
-                                                file.getOriginalFilename(),
-                                                new HashMap<>());
+        String sheetName = "学生信息";
+        Map<Serializable, Object> excelParam = new HashMap<>();
+        ExcelImportRes importRes = ExcelImportUtil.customImportData("Student",
+                                                                    file.getInputStream(),
+                                                                    file.getOriginalFilename(),
+                                                                    excelParam);
+        // StudentImportHandler的end方法中落地失败的数据没有在结果计数的修改。需要修正
+        int failNum = (int) excelParam.getOrDefault("学生信息", 0);
+        Map<String, ExcelImportRes.SheetInfo> errorMap = importRes.getErrorMap();
+        ExcelImportRes.SheetInfo sheetInfo = errorMap.get(sheetName);
+        int sucNum = sheetInfo.getSucNum() - failNum;
+        failNum = sheetInfo.getFailNum() + failNum;
+        sheetInfo.setSucNum(sucNum);
+        sheetInfo.setFailNum(failNum);
+        importRes.setMessage(String.format(ResponseEnum.IMPORT_FILE_DATA_EXP.message(), sucNum, failNum));
+        return importRes;
     }
 }

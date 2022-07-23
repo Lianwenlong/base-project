@@ -62,20 +62,23 @@ public class StudentImportHandler implements ExcelConsumeInterface {
 
     @Override
     public void end(List<ExcelSheetData> sheetDataList, Map<Serializable, Object> excelParam) {
+        String workbookId = excelParam.get("workbookId").toString();
         for (ExcelSheetData<StudentVO> excelSheetData : sheetDataList) {
             List<StudentVO> data = excelSheetData.getData();
+            String sheetName = excelSheetData.getSheetName();
+            int failNum = 0;
             for (StudentVO datum : data) {
                 StudentDTO dto = studentVoConverter.vo2do(datum);
-                dto.setCreator("LianWenLong");
+                //dto.setCreator("LianWenLong");
                 try {
                     studentService.insert(dto);
                 } catch (Exception e) {
+                    failNum++;
                     RowError rowError = new RowError(datum.getRowIndex(), e.getMessage());
-                    ExcelImportUtil.reportExcelError(excelParam.get("workbookId").toString(),
-                                                     excelSheetData.getIndex(),
-                                                     rowError);
+                    ExcelImportUtil.reportExcelError(workbookId, excelSheetData.getIndex(), rowError);
                 }
             }
+            excelParam.put(sheetName, failNum);
         }
     }
 }
