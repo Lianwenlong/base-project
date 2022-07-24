@@ -1,7 +1,12 @@
 package com.lian.base.dao;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
+import com.lian.base.common.model.user.LoginUser;
+import com.lian.base.common.util.UserInfoHolder;
+
 import java.time.LocalDateTime;
+import java.util.Optional;
+
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.reflection.MetaObject;
 
@@ -23,12 +28,13 @@ public class MetaHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
+        Optional<LoginUser> loginUser = UserInfoHolder.getCurrentUser();
         insertFill(metaObject, CREATE_TIME, LocalDateTime.class, LocalDateTime.now());
         insertFill(metaObject, MODIFY_TIME, LocalDateTime.class, LocalDateTime.now());
-        //TODO: 填充创建人,更新人使用用户登录名
-        insertFill(metaObject, CREATOR, String.class, "LianWenLong");
-        insertFill(metaObject, MODIFIER, String.class, "LianWenLong");
-
+        loginUser.ifPresent(user -> {
+            insertFill(metaObject, CREATOR, String.class, user.getName());
+            insertFill(metaObject, MODIFIER, String.class, user.getName());
+        });
     }
 
     private <T, E extends T> void insertFill(MetaObject metaObject, String fieldName, Class<T> fieldType, E fieldVal) {
@@ -39,9 +45,9 @@ public class MetaHandler implements MetaObjectHandler {
 
     @Override
     public void updateFill(MetaObject metaObject) {
+        Optional<LoginUser> loginUser = UserInfoHolder.getCurrentUser();
         updateFill(metaObject, MODIFY_TIME, LocalDateTime.class, LocalDateTime.now());
-        // TODO: 填充更新人信息
-        updateFill(metaObject, MODIFIER, String.class, "LianWenLong");
+        loginUser.ifPresent(user -> insertFill(metaObject, MODIFIER, String.class, user.getName()));
     }
 
     private <T, E extends T> void updateFill(MetaObject metaObject, String fieldName, Class<T> fieldType, E fieldVal) {

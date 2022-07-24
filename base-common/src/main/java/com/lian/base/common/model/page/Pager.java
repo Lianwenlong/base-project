@@ -1,4 +1,4 @@
-package com.lian.base.common.model;
+package com.lian.base.common.model.page;
 
 import io.swagger.annotations.ApiModel;
 

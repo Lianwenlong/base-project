@@ -1,4 +1,4 @@
-package com.lian.base.common.model;
+package com.lian.base.common.model.page;
 
 import cn.hutool.core.text.StrJoiner;
 import cn.hutool.core.util.ArrayUtil;

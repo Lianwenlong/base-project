@@ -1,8 +1,8 @@
 package com.lian.base.dao;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lian.base.common.model.QueryPager;
-import com.lian.base.common.model.ResultPager;
+import com.lian.base.common.model.page.QueryPager;
+import com.lian.base.common.model.page.ResultPager;
 
 import java.util.List;
 import java.util.Set;

@@ -2,8 +2,8 @@ package com.lian.base.service.student.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lian.base.common.model.QueryPager;
-import com.lian.base.common.model.ResultPager;
+import com.lian.base.common.model.page.QueryPager;
+import com.lian.base.common.model.page.ResultPager;
 import com.lian.base.common.util.ParamUtils;
 import com.lian.base.dao.student.StudentMapper;
 import com.lian.base.dao.student.model.StudentDO;
