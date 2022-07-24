@@ -49,6 +49,10 @@ spring:
 #  tmp_path: /tmp/import/
 #  download_path: /download/
 
+base:
+  global-response:
+    enabled: true
+
 #swagger在线文档配置
 swagger:
   enabled: true

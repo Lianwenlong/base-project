@@ -3,7 +3,6 @@ package com.lian.base.web.v1.student;
 import com.alanpoi.analysis.common.utils.ExcelExportUtil;
 import com.alanpoi.analysis.common.utils.ExcelImportUtil;
 import com.alanpoi.analysis.excel.imports.ExcelImportRes;
-import com.alanpoi.analysis.excel.imports.ExcelSheetData;
 import com.alanpoi.common.enums.ResponseEnum;
 import com.lian.base.common.model.QueryPager;
 import com.lian.base.common.model.ResultPager;
@@ -95,16 +94,16 @@ public class StudentController implements BaseController {
     }
 
     @ApiOperation("学生信息导出")
-    @GetMapping("/download")
-    void download(HttpServletRequest request, HttpServletResponse response, QueryPager queryPager) {
+    @GetMapping("/export")
+    void export(HttpServletRequest request, HttpServletResponse response, QueryPager queryPager) {
         ResultPager<StudentDTO> studentPager = studentService.listStudents(queryPager);
         List<StudentVO> records = studentVoConverter.do2vo(studentPager.getRecords());
         ExcelExportUtil.export(records, StudentVO.class, request, response, "Student.xlsx");
     }
 
     @ApiOperation("学生信息导入")
-    @PostMapping("/upload")
-    ExcelImportRes upload(MultipartFile file) throws IOException {
+    @PostMapping("/import")
+    ExcelImportRes importStudents(MultipartFile file) throws IOException {
         String sheetName = "学生信息";
         Map<Serializable, Object> excelParam = new HashMap<>();
         ExcelImportRes importRes = ExcelImportUtil.customImportData("Student",
