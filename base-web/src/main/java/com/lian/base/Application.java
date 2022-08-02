@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author LianWenLong
  * @version 1.0
- * @date 2022年04月18日 18:05
+ * @since 2022年04月18日 18:05
  */
 @EnableSwagger2Doc
 @SpringBootApplication
