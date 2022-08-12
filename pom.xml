@@ -60,6 +60,8 @@
         <alanpoi.analysis.version>1.3.6</alanpoi.analysis.version>
         <persistence.version>2.2</persistence.version>
         <leaf.version>1.0.2-SNAPSHOT</leaf.version>
+        <!-- 表达式校验工具 -->
+        <aviator.version>5.3.1</aviator.version>
     </properties>
 
     <!-- 依赖统一版本管理声明 -->
@@ -160,6 +162,12 @@
                 <artifactId>leaf-boot-starter</artifactId>
                 <groupId>com.sankuai.inf.leaf</groupId>
                 <version>${leaf.version}</version>
+            </dependency>
+            <!-- 表达式校验工具包 -->
+            <dependency>
+                <groupId>com.googlecode.aviator</groupId>
+                <artifactId>aviator</artifactId>
+                <version>${aviator.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
